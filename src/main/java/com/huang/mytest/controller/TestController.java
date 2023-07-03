@@ -11,5 +11,6 @@ public class TestController {
     @GetMapping("/a")
     public void test() {
         log.info("11111");
+        log.info("test");
     }
 }
