@@ -12,6 +12,7 @@ public class TestController {
     public void test() {
         log.info("11111");
         log.info("test");
-        log.info("github");
+        log.info("github");t
+        log.info("t1");
     }
 }
