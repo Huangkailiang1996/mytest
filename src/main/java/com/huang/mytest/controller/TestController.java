@@ -13,5 +13,6 @@ public class TestController {
         log.info("11111");
         log.info("test");
         log.info("local");
+        log.info("github");
     }
 }
