@@ -12,7 +12,8 @@ public class TestController {
     public void test() {
         log.info("11111");
         log.info("test");
-        log.info("local");
         log.info("github");
+        log.info("t1");
+        log.info("local");
     }
 }
