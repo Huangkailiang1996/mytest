@@ -11,7 +11,7 @@ public class InterceptorConfig implements WebMvcConfigurer {
     public void addInterceptors(InterceptorRegistry registry) {
         //注册TestInterceptor拦截器
         InterceptorRegistration registration = registry.addInterceptor(new MyInterceptor());
-        registration.addPathPatterns("/**"); 	//所有路径都被拦截
+        registration.addPathPatterns("/z"); 	//所有路径都被拦截
         registration.excludePathPatterns(    	//添加不拦截路径
                 "/login",                    	//登录路径
                 "/**/*.html",                	//html静态资源
