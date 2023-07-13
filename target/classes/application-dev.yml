@@ -11,4 +11,8 @@ spring:
 mybatis:
   mapperLocations: classpath:mapper/*.xml
   configuration:
-    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl # 打印mybatis日志
+
+logging:
+  pattern:
+    dateformat: YYYY-MM-dd HH:mm:ss

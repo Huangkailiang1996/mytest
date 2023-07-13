@@ -31,4 +31,11 @@
             id = #{id}
         </foreach>
     </select>
+
+    <update id="updateAgeMin">
+        update student set age = #{age} where id = #{id}
+    </update>
+    <update id="updateAgeAdd">
+        update student set age = #{age} where id = #{id}
+    </update>
 </mapper>

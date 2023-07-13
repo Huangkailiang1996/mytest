@@ -6,12 +6,14 @@ import java.util.List;
 
 public interface UserService {
 
-   Student selectById(Integer id);
+    Student selectById(Integer id);
 
-   List<Student> queryByCondition(Student student);
+    List<Student> queryByCondition(Student student);
 
-   List<Student> queryByArrays(Integer[] ids);
+    List<Student> queryByArrays(Integer[] ids);
 
-   int insertByList(List<Student> students);
+    int insertByList(List<Student> students);
+
+    int updateAge(Integer age, Integer id);
 
 }

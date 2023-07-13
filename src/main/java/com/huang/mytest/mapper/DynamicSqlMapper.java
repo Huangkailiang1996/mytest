@@ -21,5 +21,12 @@ public interface DynamicSqlMapper {
     /**
      * 通过list集合时间批量插入
      */
-    int insertByList(@Param("students")List<Student> students);
+    int insertByList(@Param("students") List<Student> students);
+
+    /**
+     * 模拟事务操作
+     */
+    int updateAgeMin(@Param("age") Integer age, @Param("id") Integer id);
+
+    int updateAgeAdd(@Param("age") Integer age, @Param("id") Integer id);
 }
