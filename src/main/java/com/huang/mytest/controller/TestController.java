@@ -6,8 +6,7 @@ import com.huang.mytest.service.UserService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Transactional;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -19,13 +18,18 @@ public class TestController {
     @Autowired
     private UserService userService;
 
-    @GetMapping("/a")
-    public void test() {
-        Student student = new Student();
-        student.setId(1);
-        log.info("开始执行查询方法，条件id为:{}", student.getId());
-        Student studenta = userService.selectById(student.getId());
-        log.info("查询出学生姓名为：{}", studenta.getName());
+    @GetMapping("/aa")
+    @ResponseBody
+    public void test0(@RequestParam("name") String name, @RequestParam("age") Integer age) {
+        log.info("通过@PathVariable获取请求路径中的参数-name:{}", name);
+        log.info("通过@PathVariable获取请求路径中的参数-age:{}", age);
+    }
+
+    @GetMapping("/a/{name}/{age}")
+    @ResponseBody
+    public void test(@PathVariable("name") String name, @PathVariable("age") Integer age) {
+        log.info("通过@PathVariable获取请求路径中的参数-name:{}", name);
+        log.info("通过@PathVariable获取请求路径中的参数-age:{}", age);
     }
 
     @Transactional
@@ -53,6 +57,6 @@ public class TestController {
     @GetMapping("/tran")
     public void test3() {
         int updateAge = userService.updateAge(100, 1);
-        log.info("修改成功：{}",updateAge);
+        log.info("修改成功：{}", updateAge);
     }
 }
