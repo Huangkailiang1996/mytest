@@ -7,6 +7,10 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
+//@Component
+//@ConfigurationProperties(prefix = "student")
+//@PropertySource("classpath:mytest.properties")
+//@PropertySources({@PropertySource("classpath:mytest.properties")})
 public class Student {
 
     private Integer id;

@@ -18,11 +18,16 @@ public class TestController {
     @Autowired
     private UserService userService;
 
+    @Autowired
+    private Student student;
+
     @GetMapping("/aa")
     @ResponseBody
     public void test0(@RequestParam("name") String name, @RequestParam("age") Integer age) {
         log.info("通过@PathVariable获取请求路径中的参数-name:{}", name);
         log.info("通过@PathVariable获取请求路径中的参数-age:{}", age);
+        log.info("绑定属性student：{}", student.getName() + student.getAge() + student.getSex() + student.getId());
+        log.info("参数student:{}",student);
     }
 
     @GetMapping("/a/{name}/{age}")
